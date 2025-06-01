@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Benefit Booster - SA:MP</title>
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: linear-gradient(45deg, #0a0f3d, #1f2947);
+    color: #f0f4ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  header {
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #48b1f7;
+    text-shadow: 0 0 10px #48b1f7aa;
+    margin-bottom: 0.4rem;
+  }
+  p.subtitle {
+    font-size: 1.3rem;
+    color: #7ec8ffcc;
+  }
+  main {
+    max-width: 960px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2.5rem;
+  }
+  @media (max-width: 800px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+  }
+  .catalog-item {
+    background: rgba(72, 177, 247, 0.1);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 24px rgba(72, 177, 247, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    color: #cce6ff;
+  }
+  .catalog-item:hover {
+    box-shadow: 0 14px 40px rgba(72, 177, 247, 0.4);
+    transform: translateY(-12px);
+  }
+  .item-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+    text-align: center;
+    color: #48b1f7;
+    text-shadow: 0 0 8px #a0d8ffbb;
+  }
+  ul.benefits-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #bae1ffcc;
+  }
+  ul.benefits-list li {
+    margin-bottom: 8px;
+  }
+  footer {
+    margin-top: 3rem;
+    color: #7ec8ffbb;
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 960px;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Benefit Booster</h1>
+  <p class="subtitle">Booster Server, Streamer, & Girl Server Garuda dengan Keunggulan Server Terbaik</p>
+</header>
+
+<main aria-label="Benefit Booster Catalog">
+  <!-- Catalog items will render here -->
+</main>
+
+<footer>
+  &copy; 2024 Benefit Booster Server Garuda Bently -Handle. All rights reserved.
+</footer>
+
+<script>
+  const boosterData = [
+    {
+      name: "Benefit Booster Server",
+      benefits: [
+        "Booster 1 Kendaaraan Bebas pilih",
+        "Booster 2 VIP Type Medium 7 Days",
+        "Booster 3 VIP Type Medium 10 Days+Nrg"
+      ]
+    },
+    {
+      name: "Benefit Streamer",
+      benefits: [
+        "Kendaraan ZR-350",
+        "VIP Type Medium 7 Days",
+        "Uang IC $10.000"
+      ]
+    },
+    {
+      name: "Benefit Girl",
+      benefits: [
+        "Pilih Mobil ZR-350/Comet",
+        "VIP Type Medium 10 Days",
+        "Uang IC $10.000", 
+      ]
+    }
+  ];
+
+  const main = document.querySelector('main');
+
+  function renderCatalog() {
+    main.innerHTML = '';
+    boosterData.forEach(item => {
+      const section = document.createElement('section');
+      section.className = 'catalog-item';
+      section.innerHTML = `
+        <h2 class="item-title">${item.name}</h2>
+        <ul class="benefits-list">
+          ${item.benefits.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+      `;
+      main.appendChild(section);
+    });
+  }
+
+  renderCatalog();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+/* Reset dan base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background: linear-gradient(135deg, #0a0f3d, #1c2746);
+  color: #e8f0ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Header */
+header {
+  max-width: 960px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+h1 {
+  font-size: 3.2rem;
+  color: #48b1f7;
+  text-shadow: 0 0 15px #48b1f7aa;
+  margin-bottom: 0.5rem;
+}
+p.subtitle {
+  font-size: 1.4rem;
+  color: #a4d8ff;
+}
+
+/* Grid layout */
+main {
+  max-width: 960px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Responsive support */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  p.subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Card items */
+.catalog-item {
+  background: rgba(72, 177, 247, 0.08);
+  border: 1px solid #48b1f730;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(72, 177, 247, 0.2);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+.catalog-item:hover {
+  box-shadow: 0 16px 50px rgba(72, 177, 247, 0.4);
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Title in card */
+.item-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  color: #4cbfff;
+  text-shadow: 0 0 8px #a0d8ff99;
+}
+
+/* List of benefits */
+ul.benefits-list {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c9eaff;
+}
+ul.benefits-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  color: #8bcaf2bb;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 960px;
+  width: 100%;
+  border-top: 1px solid #48b1f725;
+  padding-top: 1rem;
+}
